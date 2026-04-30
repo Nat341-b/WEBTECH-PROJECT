@@ -16,13 +16,42 @@
 
             .catalogue-header {
                 display:flex;
-                justify-content:center;
+                flex-direction: column;
+                align-items:center;
                 background-color:#ff7a2f;
             }
 
-            .catalogue-header div {
-                width: auto;
-                text-align: center;
+             .catalogue-header {
+                width:auto;
+                height:auto;
+             }
+
+             div {
+                color:white;
+                width:auto;
+                height:auto;
+             }
+            
+            .search-bar {
+                width: 100%;
+                padding: 16px 24px 16px 50px;
+                border-radius: 50px;
+                border: 2px solid #FFE4D0;
+                font-family: 'Nunito', sans-serif;
+                font-size: 0.95rem;
+                font-weight: 600;
+                background: white;
+                box-shadow: 0 8px 32px rgba(255, 122, 47, 0.15);
+                outline: none;
+                transition: border-color 0.2s;
+            } 
+            .search-icon {
+                position: absolute;
+                left: 42px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.1rem;
+                color: var(--text-muted);
             }
 
             .header-text {
@@ -36,6 +65,11 @@
         <section>
             <div class="catalogue-header">
                 <h1 class="header-text">🐱Cats for Adoption </h1>
+                <div>Find your purr-fect buddy here~</div>
+                <div>
+                <span class="search-icon">🔎</span>
+                <input class ="search-bar" type="text" placeholder="Search by name, breed, or location...">
+                </div>
             </div>
 
         </section>
