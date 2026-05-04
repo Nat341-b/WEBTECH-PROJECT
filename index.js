@@ -90,10 +90,6 @@ function endGame() {
 // Event Listeners
 startBtn.addEventListener('click', startGame);
 
-// Add listener for the main header button
-document.getElementById('browseBtn').addEventListener('click', () => {
-    showPage('adopt', null);
-});
 
 // Add listener for the Learn More button
 document.getElementById('learnBtn').addEventListener('click', () => {
