@@ -483,3 +483,15 @@
         opacity: 0.12;
         animation: floatPaw 6s ease-in-out infinite;
     }
+
+    @keyframes floatPaw {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+     }
