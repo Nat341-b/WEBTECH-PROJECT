@@ -449,6 +449,11 @@
         color: #6b4f3f;
     }
 
+    .copyright {
+        text-align: center;
+        color: rgb(0, 0, 0);
+    }
+
     /* FOOTER */
 
     footer {
@@ -478,7 +483,7 @@
     }
 
     .paw-float {
-         position: absolute;
+        position: absolute;
         font-size: 3rem;
         opacity: 0.12;
         animation: floatPaw 6s ease-in-out infinite;
@@ -486,12 +491,12 @@
 
     @keyframes floatPaw {
 
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
+        0%,
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
 
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
-     }
+        50% {
+            transform: translateY(-20px) rotate(10deg);
+        }
+    }
