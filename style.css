@@ -476,3 +476,10 @@
         margin-bottom: 8px;
         color: #ddd;
     }
+
+    .paw-float {
+         position: absolute;
+        font-size: 3rem;
+        opacity: 0.12;
+        animation: floatPaw 6s ease-in-out infinite;
+    }
