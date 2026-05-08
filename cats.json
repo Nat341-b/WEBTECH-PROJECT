@@ -1,0 +1,50 @@
+[
+    {
+    "name": "Athena", 
+    "gender": "Female", 
+    "age": "2 years", 
+    "image": "image/Athena.png",
+    "location": "George Town, Pulau Pinang"
+    }, 
+    {
+    "name": "Boreas", 
+    "gender": "Male", 
+    "age": "3 years", 
+    "image":"",
+    "location": "Gambang, Pahang"
+    },
+    {
+    "name": "Olivia", 
+    "gender": "Female", 
+    "age": "4 years", 
+    "image":"",
+    "location": "Ipoh, Perak"
+    },
+    {
+    "name": "Vex", 
+    "gender": "Female",
+    "age": "6 months", 
+    "image":"",
+    "location": "Petaling Jaya, Selangor"
+    },
+    {
+    "name": "Fluffernutter",
+    "gender": "Male", 
+    "age": "1 year", 
+    "image":"",
+    "location": "Bayan Baru, Pulau Pinang"
+    },
+    {
+    "name": "Waffles", 
+    "gender": "Male", 
+    "age": "6 years", 
+    "image":"",
+    "location": "Kota Bharu, Kelantan"
+    },
+    {
+    "name": "Chalky", 
+    "gender": "Male", 
+    "age": "3 months", 
+    "image":"",
+    "location": "Klang, Selangor"}
+]

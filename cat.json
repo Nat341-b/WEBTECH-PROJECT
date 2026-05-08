@@ -1,9 +1,0 @@
-[
-    {"name": "Athena", "gender": "Female", "age": "2 years", "location": "George Town, Pulau Pinang"}, 
-    {"name": "Boreas", "gender": "Male", "age": "3 years", "location": "Gambang, Pahang"},
-    {"name": "Olivia", "gender": "Female", "age": "4 years", "location": "Ipoh, Perak"},
-    {"name": "Vex", "gender": "Female","age": "6 months", "location": "Petaling Jaya, Selangor"},
-    {"name": "Fluffernutter","gender": "Male", "age": "1 year", "location": "Bayan Baru, Pulau Pinang"},
-    {"name": "Waffles", "gender": "Male", "age": "6 years", "location": "Kota Bharu, Kelantan"},
-    {"name": "Chalky", "gender": "Male", "age": "3 months", "location": "Klang, Selangor"}
-]

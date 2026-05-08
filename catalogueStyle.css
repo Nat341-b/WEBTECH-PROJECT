@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+/*Search box styling*/
+
+body {
+    margin: 0;
+    padding: 0;
+    }
+
+.catalogue-header {
+    display:flex;
+    flex-direction: column;
+    align-items:center; /*Horizontal alignment*/
+    justify-content: center; /*Vertical alignment*/
+    background-color:#ff7a2f;
+    width: 100%;
+    padding: 40px 20px;
+}
+    
+.catalogue-header {
+    width:auto;
+    height:auto;
+ }
+    
+div {
+    color:white;
+    width:auto;
+    height:auto;
+ }
+    
+.search-container-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+    
+.search-wrapper {
+    position: relative; /* This is the anchor */
+    width: 90%;
+    max-width: 500px;  /* Keeps the bar from getting too long */
+    margin-bottom: -90px;
+    z-index: 10;
+    color: initial;
+}
+    
+.search-bar {
+    padding: 16px 24px 16px 50px;
+    border-radius: 50px;
+    border: 2px solid #FFE4D0;
+    background: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: border-color 0.2s;
+    color: #333;
+    width: 100%;
+
+} 
+    
+.search-icon {
+    left: 20px;        
+    position: absolute;
+    top: 30%;          
+    transform: translateY(-50%); 
+    font-size: 1.2rem;
+    z-index: 10;       /* Always make it on top of the input */
+}
+
+.search-bar {
+    width: 100%;
+    padding: 16px 24px 16px 55px;
+    border-radius: 50px;
+    border: 2px solid #FFE4D0;
+    outline: none;
+    align-items:left;
+    background: white;
+            }
+
+.header-text {
+    color:white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 50px;
+}
+
+/*Cat cards styling*/
+
+.cat-card {
+    display: flex; /* Aligns image and info side-by-side */
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.3s;   
+}
+
+.cat-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(255, 122, 47, 0.2);
+}
+
+.cat-image div{
+    width: 100px;
+    height: 100px;
+    border-radius: 12px; /* Rounded corners for the cat pic */
+    object-fit: cover;   /* Crucial: prevents squishing images from JSON */
+    margin-right: 20px;  /* Space between image and text */
+}
+
+.cat-image {
+    width: 150px;  /* Adjust this to make the image smaller or larger */
+    height: 150px; /* Keep width and height equal for a square */
+    flex-shrink: 0; /* Prevents the info text from squashing the image */
+    overflow: hidden;
+    border-radius: 15px;
+    margin-right: 20px; /* Space between image and text */
+}
+
+/* The actual photo inside the frame */
+.cat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fit perfectly without stretching */
+    display: block;
+}
+
+.cat-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1; /* Takes up the remaining space */
+}
+
+.cat-info h3 {
+    font-family: 'Fredoka One', cursive;
+    color: #333;
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.cat-row-meta {
+    display: flex;
+    justify-content: space-between; /* Puts breed on left, location on right */
+    align-items: center;
+    color: #777;
+    font-size: 1.5rem;
+}
