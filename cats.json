@@ -10,41 +10,41 @@
     "name": "Boreas", 
     "gender": "Male", 
     "age": "3 years", 
-    "image":"",
+    "image":"image/Boreas.png",
     "location": "Gambang, Pahang"
     },
     {
     "name": "Olivia", 
     "gender": "Female", 
     "age": "4 years", 
-    "image":"",
+    "image":"image/Olivia.jpg",
     "location": "Ipoh, Perak"
     },
     {
     "name": "Vex", 
     "gender": "Female",
     "age": "6 months", 
-    "image":"",
+    "image":"image/Vex.jpg",
     "location": "Petaling Jaya, Selangor"
     },
     {
     "name": "Fluffernutter",
     "gender": "Male", 
     "age": "1 year", 
-    "image":"",
+    "image":"image/Fluffernutter.jpg",
     "location": "Bayan Baru, Pulau Pinang"
     },
     {
     "name": "Waffles", 
     "gender": "Male", 
     "age": "6 years", 
-    "image":"",
+    "image":"image/Waffles.jpg",
     "location": "Kota Bharu, Kelantan"
     },
     {
     "name": "Chalky", 
     "gender": "Male", 
     "age": "3 months", 
-    "image":"",
+    "image":"image/Chalky.webp",
     "location": "Klang, Selangor"}
 ]
