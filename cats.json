@@ -4,47 +4,55 @@
     "gender": "Female", 
     "age": "2 years", 
     "image": "image/Athena.png",
-    "location": "George Town, Pulau Pinang"
+    "location": "George Town, Pulau Pinang",
+    "owner" : "Kak Siti (011-2345-1209)"
     }, 
     {
     "name": "Boreas", 
     "gender": "Male", 
     "age": "3 years", 
     "image":"image/Boreas.png",
-    "location": "Gambang, Pahang"
+    "location": "Gambang, Pahang",
+    "owner" : "Encik Arif (017-987-6543)"
     },
     {
     "name": "Olivia", 
     "gender": "Female", 
     "age": "4 years", 
     "image":"image/Olivia.jpg",
-    "location": "Ipoh, Perak"
+    "location": "Ipoh, Perak",
+    "owner" : "Encik Lim (011-2233-4455)"
     },
     {
     "name": "Vex", 
     "gender": "Female",
     "age": "6 months", 
     "image":"image/Vex.jpg",
-    "location": "Petaling Jaya, Selangor"
+    "location": "Petaling Jaya, Selangor",
+    "owner" : "Miss Tan (016-554-4332)"
     },
     {
     "name": "Fluffernutter",
     "gender": "Male", 
     "age": "1 year", 
     "image":"image/Fluffernutter.jpg",
-    "location": "Bayan Baru, Pulau Pinang"
+    "location": "Bayan Baru, Pulau Pinang",
+    "owner" : "Miss Ravi (019-221-0098)"
     },
     {
     "name": "Waffles", 
     "gender": "Male", 
     "age": "6 years", 
     "image":"image/Waffles.jpg",
-    "location": "Kota Bharu, Kelantan"
+    "location": "Kota Bharu, Kelantan",
+    "owner" : "Miss Priya(013-667-8890)"
     },
     {
     "name": "Chalky", 
     "gender": "Male", 
     "age": "3 months", 
     "image":"image/Chalky.webp",
-    "location": "Klang, Selangor"}
+    "location": "Klang, Selangor",
+    "owner" : "Puan Liza(017-987-6543)"
+    }
 ]

@@ -1,14 +1,43 @@
 let globalCatData = [];
 
 async function displayCats() {
-    const response = await fetch('cats.json');
-    const catData = await response.json();
-    const container = document.getElementById('catsCard');
-
-    container.innerHTML = ""; //Container clearing after refresh
-
-    catData.forEach((cat, index) => {
+    try {
+        const response = await fetch('cats.json');
+        const catData = await response.json();
         
+        // Save to global so filterCats and Popup can see it
+        globalCatData = catData; 
+        
+        // Use the helper function instead of writing the loop here again
+        renderCards(globalCatData); 
+    } catch (error) {
+        console.error("Error fetching cats:", error);
+    }
+}
+
+displayCats();
+
+//Search-bar function starts here
+
+function filterCats() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Filter the array based on name, breed, or location
+    const filtered = globalCatData.filter(cat => {
+        return cat.name.toLowerCase().includes(query) || 
+               cat.location.toLowerCase().includes(query);
+    });
+
+    renderCards(filtered); // Display only the matches
+}
+
+//Render the searched cats from user-input
+function renderCards(data) {
+    const container = document.getElementById('catsCard');
+    container.innerHTML = ""; 
+
+    data.forEach((cat) => {
+        // Use cat.name (or an ID) instead of index to stay accurate during search
         const cardHTML = `
             <div class="cat-card">
                 <div class="cat-image">
@@ -21,26 +50,60 @@ async function displayCats() {
                         <span class="age">🎂 ${cat.age}</span>
                         <span class="location">📍 ${cat.location}</span>
                     </div>
-                    <button class="view-details-button" onclick="Popup(${index})">View Details</button>
+                    <button class="view-details-button" onclick="PopupByName('${cat.name}')">View Details</button>
                 </div>
             </div>
         `;
-        
         container.innerHTML += cardHTML;
     });
 }
 
-displayCats();
+//Show suggestions when user inputs
+function showSuggestions() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const box = document.getElementById('suggestionsBox');
+    
+    if (query.length < 1) {
+        box.style.display = "none";
+        return;
+    }
 
+    // Filter names or breeds that START with the query
+    const matches = globalCatData.filter(cat => 
+        cat.name.toLowerCase().startsWith(query) || 
+        cat.location.toLowerCase().startsWith(query)
+    ).slice(0, 5); // Limit to top 5 results
 
-
-function filterCats(){
-
+    if (matches.length > 0) {
+        box.innerHTML = matches.map(cat => `
+            <div class="suggest-item" onclick="selectSuggestion('${cat.name}')">
+                <strong>${cat.name}</strong>
+            </div>
+        `).join('');
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
 }
 
-//Popup for viewing details for a cat
-function Popup(index) {
-    const cat = globalCatData[index]; // Grab the specific cat using the index
+function selectSuggestion(name) {
+    document.getElementById('searchInput').value = name;
+    document.getElementById('suggestionsBox').style.display = "none";
+    filterCats(); // Trigger your main search function to show the card
+}
+//Search bar function ends here
+
+// Close dropdown if user clicks elsewhere
+window.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-wrapper')) {
+        document.getElementById('suggestionsBox').style.display = "none";
+    }
+});
+
+
+function PopupByName(name) {
+    // Find the cat in the main list that matches the name
+    const cat = globalCatData.find(c => c.name === name);
     const modal = document.getElementById("catModal");
     const modalBody = document.getElementById("modalBody");
 
@@ -50,15 +113,44 @@ function Popup(index) {
             <h2>${cat.name}</h2>
             <p><strong>Age:</strong> ${cat.age}</p>
             <p>📍 ${cat.location}</p>
-            <button class="adopt-btn" onclick="AdoptByName('${cat.name}')">Adopt ${cat.name}</button>
+            <p> 📞 Owner Contact ${cat.owner} </p>
+            <button class="adopt-btn" onclick="AdoptPet('${cat.name}')">Adopt ${cat.name}</button>
         `;
         modal.style.display = "block";
     }
 }
 
+//Popup for viewing details for a cat
+function Popup(index) {
+    const cat = globalCatData[index]; 
+    const modal = document.getElementById("catModal");
+    const modalBody = document.getElementById("modalBody");
 
+    // We only inject the stuff that CHANGES for each cat
+    modalBody.innerHTML = `
+        <img  src="${cat.image}" style="width:100%; height:250px; object-fit:cover; border-radius:15px; margin-bottom:15px;">
+        <h2 style="font-family:'Fredoka One'; color: #333;">${cat.name}</h2>
+        
+        <div style="display: flex; gap: 20px; margin: 10px 0; color: #666;">
+            <span><strong>Age:</strong> ${cat.age}</span>
+            <span><strong>Gender:</strong> ${cat.gender}</span>
+        </div>
+        
+        <p style="margin: 15px 0; color: #444;">
+            <strong style="color: #ff7a2f;">📍 Location:</strong> ${cat.location}
+        </p>
 
-    modal.style.display = "block"; // Show the modal
+        <button class="adopt-btn" onclick="Adopt(${index})" style="width: 100%; padding: 12px; background: #ff7a2f; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">
+            Adopt ${cat.name}
+        </button>
+    `;
+
+    modal.style.display = "block"; 
+}
+
+function AdoptPet(name){
+    const cat = globalCatData.find(c => c.name === name);
+    window.alert(`You have chosen ${cat.name}, Please contact ${cat.owner} for more information!`);
 }
 
 function closePopup() {

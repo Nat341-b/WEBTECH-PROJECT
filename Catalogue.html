@@ -11,11 +11,15 @@
             <div id="adopt">
                 <div class="catalogue-header">
                     <h1 class="header-text">🐱Cats for Adoption </h1>
-                    <div>Find your purr-fect buddy here~</div>
+                    <p>Find your purr-fect buddy here~</p>
                     <div class="search-container-box">
                         <div class="search-wrapper">
+                            <div id="suggestionsBox" class="suggest-drop"></div>
                             <span class="search-icon">🔎</span>
-                            <input class ="search-bar" type="text" placeholder="Search by name, breed, or location..." id="searchInput" oninput="filterCats()">
+                            <input class ="search-bar" id="searchInput" 
+                            type="text" placeholder="Search by name or location..."
+                             oninput="filterCats(); showSuggestions();"
+                             autocomplete="off" > <!--Turns off google's suggestions-->
                         </div>
                     </div>
                 </div>
@@ -23,14 +27,17 @@
                 </div>
             </div>
             <div style="height: 500px; background: white;"></div>
-            <div id="catModal" class="modal">
-            <div class="modal-content">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <div id="modalBody">
-            </div>
+            
     </div>
 </div>
         </section>
+        <div id="catModal" class="modal">
+     <div class="modal-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <div id="modalBody">
+     </div>
+        </div>
+        </div>
         <script src="catalogueScript.js"></script>
 </body>
 
