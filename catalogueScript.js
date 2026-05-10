@@ -44,16 +44,19 @@ function Popup(index) {
     const modal = document.getElementById("catModal");
     const modalBody = document.getElementById("modalBody");
 
-    // Inject data into the modal
-    modalBody.innerHTML = `
-        <img src="${cat.image}" style="width:100%; border-radius:15px; margin-bottom:15px;">
-        <h2 style="font-family: 'Fredoka One';">${cat.name}</h2>
-        <p><strong>Breed:</strong> ${cat.breed}</p>
-        <p><strong>Age:</strong> ${cat.age}</p>
-        <p><strong>Gender:</strong> ${cat.gender}</p>
-        <p style="margin-top:15px;">${cat.description || "This friendly feline is looking for a forever home!"}</p>
-        <button class="adopt-btn">Adopt ${cat.name}</button>
-    `;
+    if (cat) {
+        modalBody.innerHTML = `
+            <img src="${cat.image}" style="width:100%; height:250px; object-fit:cover; border-radius:15px; margin-bottom:15px;">
+            <h2>${cat.name}</h2>
+            <p><strong>Age:</strong> ${cat.age}</p>
+            <p>📍 ${cat.location}</p>
+            <button class="adopt-btn" onclick="AdoptByName('${cat.name}')">Adopt ${cat.name}</button>
+        `;
+        modal.style.display = "block";
+    }
+}
+
+
 
     modal.style.display = "block"; // Show the modal
 }
