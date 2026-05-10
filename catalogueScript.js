@@ -8,7 +8,7 @@ async function displayCats() {
     catData.forEach((cat, index) => {
         
         const cardHTML = `
-            <div class="cat-card" onclick="Popup(${index}) style:"style="display: flex; align-items: center; margin-bottom: 20px; background: white; padding: 15px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            <div class="cat-card">
                 <div class="cat-image">
                     <img src="${cat.image}" alt="${cat.name}">
                 </div>
@@ -16,9 +16,10 @@ async function displayCats() {
                     <h3>${cat.name}</h3>
                     <div class="cat-row-meta">
                         <span class="gender">${cat.gender}</span>
-                        <span class="age">🎂${cat.age}</span>
+                        <span class="age">🎂 ${cat.age}</span>
                         <span class="location">📍 ${cat.location}</span>
                     </div>
+                    <button class="view-details-button" onclick="Popup(${index})">View Details</button>
                 </div>
             </div>
         `;

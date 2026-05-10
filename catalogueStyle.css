@@ -93,13 +93,15 @@ div {
 .cat-card {
     display: flex; /* Aligns image and info side-by-side */
     align-items: center;
+    width:auto;
+    height:150px;
     background: white;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     cursor: pointer;
-    transition: 0.3s;   
+    transition: 0.3s;
 }
 
 .cat-card:hover {
@@ -152,4 +154,26 @@ div {
     align-items: center;
     color: #777;
     font-size: 1.5rem;
+}
+
+/*View details function*/
+
+.view-details-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff7a2f;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content; /* Keeps the button from stretching too wide */
+}
+
+.view-details-button:hover {
+    background-color: #e66a25;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 122, 47, 0.3);
 }
