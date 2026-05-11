@@ -29,6 +29,60 @@
         height: 100vh;
     }
 
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(16px);
+        border-bottom: 2px solid #FFE4D0;
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+        box-shadow: 0 2px 20px rgba(255, 122, 47, 0.08);
+    }
+
+    .logo {
+        font-family: 'Fredoka One', cursive;
+        font-size: 1.8rem;
+        color: var(--orange);
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+
+    .logo span {
+        color: var(--text);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 8px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        padding: 8px 18px;
+        border-radius: 50px;
+        transition: all 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: var(--orange-pale);
+        color: var(--orange);
+    }
+
+    .root {
+        color: hsl(0, 0%, 20%);
+    }
+
+
     /* home */
 
     .badge {
