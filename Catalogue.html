@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="catalogueStyle.css">
-        <title>PetBuddy 🐱-Find Your Purr-fect friend!</title>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
-    </head>
+
+<head>
+    <link rel="stylesheet" href="catalogueStyle.css">
+    <title>PetBuddy 🐱-Find Your Purr-fect friend!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="home.css" />
+</head>
+
 <body>
-        <section>
-            <!--ADOPT PAGE-->
-            <div id="adopt">
-                <div class="catalogue-header">
-                    <h1 class="header-text">🐱Cats for Adoption </h1>
-                    <p>Find your purr-fect buddy here~</p>
-                    <div class="search-container-box">
-                        <div class="search-wrapper">
-                            <div id="suggestionsBox" class="suggest-drop"></div>
-                            <span class="search-icon">🔎</span>
-                            <input class ="search-bar" id="searchInput" 
-                            type="text" placeholder="Search by name or location..."
-                             oninput="filterCats(); showSuggestions();"
-                             autocomplete="off" > <!--Turns off google's suggestions-->
-                        </div>
+    <!-- navigation bar -->
+    <div id="navbar-container"></div>
+
+    <section>
+        <!--ADOPT PAGE-->
+        <div id="adopt">
+            <div class="catalogue-header">
+                <h1 class="header-text">🐱Cats for Adoption </h1>
+                <p>Find your purr-fect buddy here~</p>
+                <div class="search-container-box">
+                    <div class="search-wrapper">
+                        <div id="suggestionsBox" class="suggest-drop"></div>
+                        <span class="search-icon">🔎</span>
+                        <input class="search-bar" id="searchInput" type="text"
+                            placeholder="Search by name or location..." oninput="filterCats(); showSuggestions();"
+                            autocomplete="off"> <!--Turns off google's suggestions-->
                     </div>
                 </div>
-                <div class="cats-cards" id="catsCard">
-                </div>
             </div>
-            <div style="height: 500px; background: white;"></div>
-            
+            <div class="cats-cards" id="catsCard">
+            </div>
+        </div>
+        <div style="height: 500px; background: white;"></div>
+
+        </div>
+        </div>
+    </section>
+    <div id="catModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div id="modalBody">
+            </div>
+        </div>
     </div>
-</div>
-        </section>
-        <div id="catModal" class="modal">
-     <div class="modal-content">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <div id="modalBody">
-     </div>
-        </div>
-        </div>
-        <script src="catalogueScript.js"></script>
+    <script src="catalogueScript.js"></script>
+    <script src="navbar.js"></script>
 </body>
 
 </html>
