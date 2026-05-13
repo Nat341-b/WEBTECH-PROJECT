@@ -19,6 +19,40 @@ displayCats();
 
 //Search-bar function starts here
 
+//Show suggestions when user inputs
+function showSuggestions() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const box = document.getElementById('suggestionsBox');
+    
+    if (query.length < 1) {
+        box.style.display = "none";
+        return;
+    }
+
+    // Filter names or breeds that START with the query
+    const matches = globalCatData.filter(cat => 
+        cat.name.toLowerCase().startsWith(query) || 
+        cat.location.toLowerCase().startsWith(query)
+    ).slice(0, 5); // Limit to top 5 results (object 1 to 5)
+
+    if (matches.length > 0) {
+        box.innerHTML = matches.map(cat => `
+            <div class="suggest-item" onclick="selectSuggestion('${cat.name}')">
+                <strong>${cat.name}</strong>
+            </div>
+        `).join('');
+        box.style.display = "block"; //takes the display as in it takes space (block)
+    } else {
+        box.style.display = "none"; //doesn't take/fill any space(none)
+    }
+}
+
+function selectSuggestion(name) {
+    document.getElementById('searchInput').value = name;
+    document.getElementById('suggestionsBox').style.display = "none";
+    filterCats(); // Trigger your main search function to show the card
+}
+
 function filterCats() {
     const query = document.getElementById('searchInput').value.toLowerCase();
     
@@ -58,41 +92,6 @@ function renderCards(data) {
     });
 }
 
-//Show suggestions when user inputs
-function showSuggestions() {
-    const query = document.getElementById('searchInput').value.toLowerCase();
-    const box = document.getElementById('suggestionsBox');
-    
-    if (query.length < 1) {
-        box.style.display = "none";
-        return;
-    }
-
-    // Filter names or breeds that START with the query
-    const matches = globalCatData.filter(cat => 
-        cat.name.toLowerCase().startsWith(query) || 
-        cat.location.toLowerCase().startsWith(query)
-    ).slice(0, 5); // Limit to top 5 results
-
-    if (matches.length > 0) {
-        box.innerHTML = matches.map(cat => `
-            <div class="suggest-item" onclick="selectSuggestion('${cat.name}')">
-                <strong>${cat.name}</strong>
-            </div>
-        `).join('');
-        box.style.display = "block";
-    } else {
-        box.style.display = "none";
-    }
-}
-
-function selectSuggestion(name) {
-    document.getElementById('searchInput').value = name;
-    document.getElementById('suggestionsBox').style.display = "none";
-    filterCats(); // Trigger your main search function to show the card
-}
-//Search bar function ends here
-
 // Close dropdown if user clicks elsewhere
 window.addEventListener('click', (e) => {
     if (!e.target.closest('.search-wrapper')) {
@@ -100,7 +99,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
-
+//Shows cards that obey the user query
 function PopupByName(name) {
     // Find the cat in the main list that matches the name
     const cat = globalCatData.find(c => c.name === name);
@@ -119,8 +118,9 @@ function PopupByName(name) {
         modal.style.display = "block";
     }
 }
+//Search bar function ends here
 
-//Popup for viewing details for a cat
+//Popup for viewing details for a cat starts here
 function Popup(index) {
     const cat = globalCatData[index]; 
     const modal = document.getElementById("catModal");
@@ -131,7 +131,7 @@ function Popup(index) {
         <img  src="${cat.image}" style="width:100%; height:250px; object-fit:cover; border-radius:15px; margin-bottom:15px;">
         <h2 style="font-family:'Fredoka One'; color: #333;">${cat.name}</h2>
         
-        <div style="display: flex; gap: 20px; margin: 10px 0; color: #666;">
+        <div style="display: flex; gap: 20px; margin: 30px 0; color: #666;">
             <span><strong>Age:</strong> ${cat.age}</span>
             <span><strong>Gender:</strong> ${cat.gender}</span>
         </div>
@@ -164,3 +164,4 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+//Popup functions ends here
