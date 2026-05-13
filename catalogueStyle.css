@@ -116,9 +116,12 @@
 /*Cat cards styling*/
 
 .cat-card {
-    display: flex; /* Aligns image and info side-by-side */
+    display: flex;
     align-items: center;
-    width:auto;
+    justify-content: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
     height:auto;
     background: white;
     border-radius: 20px;
@@ -137,25 +140,25 @@
 .cat-image div{
     width: 100px;
     height: 100px;
-    border-radius: 12px; /* Rounded corners for the cat pic */
-    object-fit: cover;   /* Crucial: prevents squishing images from JSON */
-    margin-right: 20px;  /* Space between image and text */
+    border-radius: 12px; 
+    object-fit: cover;   
+    margin-right: 20px;  
 }
 
 .cat-image {
-    width: 150px;  /* Adjust this to make the image smaller or larger */
-    height: 150px; /* Keep width and height equal for a square */
-    flex-shrink: 0; /* Prevents the info text from squashing the image */
+    width: 150px;  
+    height: 150px; 
+    flex-shrink: 0; 
     overflow: hidden;
     border-radius: 15px;
-    margin-right: 20px; /* Space between image and text */
+    margin-right: 20px; 
 }
 
-/* The actual photo inside the frame */
+/*photo inside card*/
 .cat-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops the image to fit perfectly without stretching */
+    object-fit: cover;/* Crops the image to fit perfectly without stretching */
     display: block;
 }
 
@@ -175,7 +178,7 @@
 
 .cat-row-meta {
     display: flex;
-    justify-content: space-between; /* Puts breed on left, location on right */
+    justify-content: space-between; 
     align-items: center;
     color: #777;
     font-size: 1.5rem;
@@ -228,7 +231,7 @@
 .adopt-btn {
     width: 100%;
     padding: 12px;
-    background-color: #ff7a2f; /* That signature PetBuddy orange */
+    background-color: #ff7a2f; 
     color: white;
     border: none;
     border-radius: 10px;
