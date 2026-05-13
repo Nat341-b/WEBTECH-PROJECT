@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>😺 PetBuddy</title>
-    <link rel="stylesheet" type="text/css" href="home.css" />
+    <link rel="stylesheet" href="home.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
@@ -58,17 +60,15 @@
                 </div>
             </div>
 
-            <div class="game-wrapper">
-                <h2 class="content-title">Catch the Mouse!🐭</h2>
-                <div id="game-container">
-                    <button id="start-game">Start Game</button>
-                    <p id="score">Score: 0</p>
-                    <div class="game-play-area">
-                        <div id="mouse">🐭</div>
-                        <div id="cat">🐱</div>
-                    </div>
-                </div>
+            <div class="container-map">
+
+                <h2 class="map-title">
+                    Our Pet Store Location 🐾
+                </h2>
+
+                <div id="map"></div>
             </div>
+
 
         </div>
     </div>
@@ -136,8 +136,13 @@
     </footer>
 
 
-    <script src="index.js"></script>
+    <!-- Leaflet JS FIRST -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- THEN your JS -->
     <script src="navbar.js"></script>
+    <script src="home.js"></script>
+
 </body>
 
 </html>

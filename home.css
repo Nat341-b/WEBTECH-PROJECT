@@ -502,3 +502,23 @@
             transform: translateY(-20px) rotate(10deg);
         }
     }
+
+    /* Leaflet Map Styles */
+    .map-container {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .map-title {
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    #map {
+        height: 400px;
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #ccc;
+    }
