@@ -1,0 +1,112 @@
+:root {
+    --orange: #FF7A2F;
+    --orange-light: #FF9A5C;
+    --orange-dark: #E05A10;
+    --orange-pale: #FFF3EC;
+    --cream: #FFFAF6;
+    --white: #FFFFFF;
+    --text: #2D2014;
+    --text-muted: #8A6E58;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 70px;
+    padding: 0 40px;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+
+    border-bottom: 2px solid #FFE4D0;
+
+    box-shadow: 0 2px 20px rgba(255, 122, 47, 0.08);
+}
+
+.logo {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8rem;
+    color: var(--orange);
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--text);
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    color: var(--text-muted);
+
+    padding: 8px 18px;
+    border-radius: 50px;
+
+    transition: all 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: var(--orange-pale);
+    color: var(--orange);
+}
+
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 0 20px;
+        flex-direction: column;
+        height: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 6px 14px;
+    }
+}
