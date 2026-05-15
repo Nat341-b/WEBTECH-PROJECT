@@ -20,7 +20,7 @@ function showPage(pageId, element) {
 
 // Add listener for the Learn More button
 document.getElementById('learnBtn').addEventListener('click', () => {
-    alert("More information about cat care is coming soon!");
+    window.location.href = "learnmore.html";
 });
 
 // Create map
