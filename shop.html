@@ -148,7 +148,7 @@
             
             <h3>Royal Canin Adult Cat</h3>
             <p class="price">RM 45.90</p>
-            <button class="buy-btn">🛒 Buy Now</button>
+            <button class="buy-btn" data-keyword="cat food" >🛒 Buy Now</button>
         </div>
 
         <div class="card">
@@ -156,7 +156,7 @@
             
             <h3>Whiskas Kitten Pouches</h3>
             <p class="price">RM 18.50</p>
-            <button class="buy-btn">🛒 Buy Now</button>
+            <button class="buy-btn" data-keyword="cat toy">🛒 Buy Now</button>
         </div>
 
         <div class="card">
@@ -164,7 +164,7 @@
             
             <h3>Me-O Dry Cat Food 1.1kg</h3>
             <p class="price">RM 22.00</p>
-            <button class="buy-btn">🛒 Buy Now</button>
+            <button class="buy-btn" data-keyword="cat suplement" >🛒 Buy Now</button>
         </div>
 
          <div class="card">
@@ -172,10 +172,40 @@
             
             <h3>Fussie Cat Tuna Flakes</h3>
             <p class="price">RM 35.00</p>
-            <button class="buy-btn">🛒 Buy Now</button>
+            <button class="buy-btn" data-keyword="cat sand">🛒 Buy Now</button>
         </div>
 
       </div>
+<script>
+   
+    const MY_AFFILIATE_ID = "CLASS_PROJECT_2026";
 
+    document.querySelectorAll('.buy-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const keyword = this.getAttribute('data-keyword');
+            
+            if (!keyword) return;
+
+            
+            console.log(`Status: Generating Affiliate Search Link for: "${keyword}"`);
+
+            
+            const encodedKeyword = encodeURIComponent(keyword);
+            const searchLink = `https://shopee.com.my/search?keyword=${encodedKeyword}&sp_atk=${MY_AFFILIATE_ID}`;
+
+            
+            const originalText = this.innerHTML;
+            this.innerText = "Opening Shopee...";
+            
+            setTimeout(() => {
+                console.log("Deep Link Generated:", searchLink);
+                window.open(searchLink, '_blank');
+                
+                // Reset button
+                this.innerHTML = originalText;
+            }, 600);
+        });
+    });
+</script>
 </body>
 </html>
