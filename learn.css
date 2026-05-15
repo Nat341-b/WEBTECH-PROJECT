@@ -26,44 +26,7 @@
             overflow-x: hidden;
         }
 
-        .page.active {
-            display: block;
-            animation: fadeIn 0.4s ease;
-        }
-
-          div {
-             display: block;
-             unicode-bidi: isolate;
-        }
-        @keyframes floatPaw {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
-        }
-
-        @font-face {
-            font-family: 'Nunito';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-         src: url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBXso.woff2) format('woff2');
-         unicode-range: U +0460 -052F, U +1C80 -1C8A, U +20B4, U +2DE0 -2DFF, U + A640-A69F, U + FE2E-FE2F;
-         }
-
-         .page-header {
-            background: linear-gradient(135deg, var(--orange), var(--orange-light));
-            padding: 50px 40px 40px;
-            text-align: center;
-            color: white;
-        }
-
-        .info-page {
+       .info-page {
             max-width: 900px;
             margin: 0 auto;
             padding: 48px 40px;
@@ -84,54 +47,144 @@
             margin-bottom: 12px;
         }
 
-        h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
-}
+        .info-card p,
+        .info-card li {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            line-height: 1.8;
+        }
 
-.info-card p, .info-card li {
-    color: var(--text-muted);
-    font-size: 0.93rem;
-    line-height: 1.8;
-}
+        .info-card ul {
+            padding-left: 20px;
+        }
 
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-}
+        .info-card li {
+            margin-bottom: 6px;
+        }
 
-btn-primary {
-    background: var(--orange);
-    color: white;
-    box-shadow: 0 4px 16px rgba(255, 122, 47, 0.35);
-}
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 13px 28px;
-    border-radius: 50px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: 0.95rem;
-    cursor: pointer;
-    border: none;
-    transition: all 0.25s;
-    text-decoration: none;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        .steps {
+            counter-reset: step;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
 
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--orange-pale);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+        }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            background: var(--orange);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .step-text strong {
+            display: block;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .step-text p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+         
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+           /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+            box-shadow: 0 4px 16px rgba(255, 122, 47, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 122, 47, 0.45);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--orange);
+            border: 2px solid var(--orange);
+        }
+
+        .btn-outline:hover {
+            background: var(--orange-pale);
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--orange);
+        }
+
+        .btn-white:hover {
+            background: var(--orange-pale);
+            transform: translateY(-2px);
+        }
+
+.page-header {
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            padding: 50px 40px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            opacity: 0.88;
+            font-size: 1rem;
+        }

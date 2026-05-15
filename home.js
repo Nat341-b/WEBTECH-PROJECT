@@ -1,5 +1,8 @@
 function showPage(pageId, element) {
 
+    const sound = new Audio("Meow.wav");
+    sound.play();
+
     // Redirect to different pages
     if (pageId === 'home') {
         window.location.href = "home.html";
