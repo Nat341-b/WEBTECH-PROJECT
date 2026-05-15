@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    ;
+}
+
+.catalogue-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*Horizontal alignment*/
+    justify-content: center;
+    /*Vertical alignment*/
+    background-color: #ff7a2f;
+    width: 100%;
+    padding: 40px 20px;
+}
+
+
+.catalogue-header {
+    width: auto;
+    height: auto;
+}
+
+.catalogue-header p {
+    color: white;
+    text-shadow: black;
+    font-family: 'Nunito', sans-serif;
+}
+
+/*Search box styling*/
+
+.search-container-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-wrapper {
+    position: relative;
+    /* This is the anchor */
+    width: 90%;
+    max-width: 500px;
+    /* Keeps the bar from getting too long */
+    margin-bottom: -90px;
+    z-index: 10;
+    color: initial;
+}
+
+/*Suggestion box*/
+.suggest-drop {
+    position: absolute;
+    top: 54px;
+    /* Directly below the input */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    /* Hidden by default */
+}
+
+.suggest-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f9f9f9;
+    color: #333;
+}
+
+.suggest-item:hover {
+    background-color: #fff5f0;
+    /* Light orange tint */
+    color: #ff7a2f;
+}
+
+.search-bar {
+    padding: 16px 24px 16px 50px;
+    border-radius: 50px;
+    border: 2px solid #FFE4D0;
+    background: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: border-color 0.2s;
+    color: #333;
+    width: 100%;
+}
+
+.search-icon {
+    left: 20px;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    z-index: 10;
+    /* Always make it on top of the input */
+}
+
+.search-bar {
+    width: 100%;
+    padding: 16px 24px 16px 55px;
+    border-radius: 50px;
+    border: 2px solid #FFE4D0;
+    outline: none;
+    align-items: left;
+    background: white;
+}
+
+.header-text {
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 50px;
+}
+
+/*Cat cards styling*/
+
+.cat-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+    height: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cat-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(255, 122, 47, 0.2);
+}
+
+.cat-image div {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.cat-image {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+/*photo inside card*/
+.cat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Crops the image to fit perfectly without stretching */
+    display: block;
+}
+
+.cat-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    /* Takes up the remaining space */
+}
+
+.cat-info h3 {
+    font-family: 'Fredoka One', cursive;
+    color: #333;
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.cat-row-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #777;
+    font-size: 1.5rem;
+}
+
+/*View details Popup function*/
+
+.view-details-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff7a2f;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    /* Keeps the button from stretching too wide */
+}
+
+.view-details-button:hover {
+    background-color: #e66a25;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 122, 47, 0.3);
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    /* Stays on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    animation: slideDown 0.3s ease;
+    margin-top: -2px;
+}
+
+.adopt-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff7a2f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 15px;
+
+}
+
+.adopt-btn:hover {
+    background-color: #e66a25;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}

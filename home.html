@@ -5,21 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>😺 PetBuddy</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="navbar.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
 
     <!-- navigation bar -->
 
-    <nav>
-        <div class="logo">🐱 Pet<span>Buddy</span></div>
-        <ul class="nav-links">
-            <li><a href="#" class="active" onclick="showPage('home',this)">🏠 Home</a></li>
-            <li><a href="Catalogue.html" >🐾 Adopt Now</a></li>
-            <li><a href="#" onclick="showPage('shop',this)">🛒 Shop</a></li>
-        </ul>
-    </nav>
+    <div id="navbar-container"></div>
 
     <!-- home page header -->
 
@@ -27,6 +23,10 @@
         <div class="badge">🐾 Malaysia's Cutest Pet Platform</div>
         <h1>Find Your Purr-fect<br>Friend!</h1>
         <p>
+            <span class="paw-float" style="top:10%;left:5%">🐾</span>
+            <span class="paw-float" style="top:20%;right:8%;animation-delay:2s"><img src="image/kucingbackground.gif"
+                    alt="kucing"></span>
+            <span class="paw-float" style="bottom:15%;left:15%;animation-delay:4s">🐾</span>
             Give a loving home to a cat in need. Browse adorable cats waiting for their<br>
             forever family, or help rehome your pet today.
         </p>
@@ -47,7 +47,7 @@
                         <div class="content-icon">🐱</div>
                         <h3>Adopt a Cat</h3>
                         <p>Browse our catalogue of adorable cats looking for a loving forever home.</p>
-                        <button class="content-btn content-filled" onclick="showPage('adopt',null)">Browse Cats
+                        <button class="content-btn content-filled" onclick="showPage('catalogue',null)">Browse Cats
                             🐾</button>
                     </div>
 
@@ -61,17 +61,15 @@
                 </div>
             </div>
 
-            <div class="game-wrapper">
-                <h2 class="content-title">Catch the Mouse!🐭</h2>
-                <div id="game-container">
-                    <button id="start-game">Start Game</button>
-                    <p id="score">Score: 0</p>
-                    <div class="game-play-area">
-                        <div id="mouse">🐭</div>
-                        <div id="cat">🐱</div>
-                    </div>
-                </div>
+            <div class="container-map">
+
+                <h2 class="map-title">
+                    Our Pet Store Location 🐾
+                </h2>
+
+                <div id="map"></div>
             </div>
+
 
         </div>
     </div>
@@ -95,7 +93,7 @@
                 <li>Provide proper food, water, and litter box</li>
             </ul>
 
-            <button class="info-button" id="learnBtn">Learn More 📖</button>
+            <button class="info-button" onclick="showPage('learnmore',null)">Learn More 📖</button>
         </div>
 
         <div class="info-right">
@@ -105,7 +103,7 @@
             </div>
         </div>
     </section>
-    <p class="copyright">© 2024 PetBuddy. All rights reserved.</p>
+    <p class="copyright">© 2026 PetBuddy. All rights reserved.</p>
 
     <!-- FOOTER -->
 
@@ -115,7 +113,7 @@
             <div class="footer-col">
                 <h2>🐱 PetBuddy</h2>
                 <p>
-                    Malaysia's friendliest pet adoption platform. Connecting cats with loving families since 2024.
+                    Malaysia's friendliest pet adoption platform. Connecting cats with loving families since 2026.
                 </p>
             </div>
 
@@ -139,7 +137,13 @@
     </footer>
 
 
-    <script src="index.js"></script>
+    <!-- Leaflet JS FIRST -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- THEN your JS -->
+    <script src="navbar.js"></script>
+    <script src="home.js"></script>
+
 </body>
 
 </html>

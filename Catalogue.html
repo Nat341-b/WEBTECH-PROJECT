@@ -1,115 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>PetBuddy 🐱 -Find Your Purr-fect friend!</title>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
 
-            body {
-                margin: 0;
-                padding: 0;
-            }
+<head>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="catalogueStyle.css">
+    <title>PetBuddy 🐱-Find Your Purr-fect friend!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600&display=swap"
+        rel="stylesheet" />
+</head>
 
-            .catalogue-header {
-                display:flex;
-                flex-direction: column;
-                align-items:center; /*Horizontal alignment*/
-                justify-content: center; /*Vertical alignment*/
-                background-color:#ff7a2f;
-                width: 100%;
-                padding: 40px 20px;
-            }
-
-             .catalogue-header {
-                width:auto;
-                height:auto;
-             }
-
-             div {
-                color:white;
-                width:auto;
-                height:auto;
-             }
-            
-            .search-container-box {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-
-            .search-wrapper {
-                position: relative; /* This is the anchor */
-                width: 90%;
-                max-width: 500px;  /* Keeps the bar from getting too long */
-                margin-bottom: -90px;
-                z-index: 10;
-                color: initial;
-            }
-
-            .search-bar {
-                width: 100%;
-                padding: 16px 24px 16px 50px;
-                border-radius: 50px;
-                border: 2px solid #FFE4D0;
-                background: white;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-                outline: none;
-                font-family: 'Nunito', sans-serif;
-                font-size: 0.95rem;
-                font-weight: 600;
-                transition: border-color 0.2s;
-                color: #333;
-            } 
-            
-           .search-icon {
-                position: absolute;
-                left: 20px;        /* Distance from the left edge */
-                top: 30%;          /* Move down 50% of the parent height */
-                transform: translateY(-50%); /* Pull up 50% of its own height to center */
-                font-size: 1.2rem;
-                z-index: 10;       /* Ensures it stays on top of the input */
-            }
-
-            .search-bar {
-                width: 100%;
-                padding: 16px 24px 16px 55px;
-                border-radius: 50px;
-                border: 2px solid #FFE4D0;
-                outline: none;
-                align-items:left;
-                background: white;
-            }
-
-            .header-text {
-                color:white;
-                font-family: 'Fredoka One', cursive;
-                font-size: 50px;
-            }
-
-        </style>
-    </head>
 <body>
-        <section>
-            <!--ADOPT PAGE-->
-            <div id="adopt">
-                <div class="catalogue-header">
-                    <h1 class="header-text">🐱Cats for Adoption </h1>
-                    <div>Find your purr-fect buddy here~</div>
-                    <div class="search-container-box">
-                        <div class="search-wrapper">
-                            <span class="search-icon">🔎</span>
-                            <input class ="search-bar" type="text" placeholder="Search by name, breed, or location..." id="searchInput" oninput="filterCats()">
-                        </div>
+    <!-- navigation bar -->
+    <div id="navbar-container"></div>
+
+    <section>
+        <!--ADOPT PAGE-->
+        <div id="adopt">
+            <div class="catalogue-header">
+                <h1 class="header-text">🐱Cats for Adoption </h1>
+                <p>Find your purr-fect buddy here~</p>
+                <div class="search-container-box">
+                    <div class="search-wrapper">
+                        <div id="suggestionsBox" class="suggest-drop"></div>
+                        <span class="search-icon">🔎</span>
+                        <input class="search-bar" id="searchInput" type="text"
+                            placeholder="Search by name or location..." oninput="filterCats(); showSuggestions();"
+                            autocomplete="off"> <!--Turns off google's suggestions-->
                     </div>
                 </div>
             </div>
-            <div style="height: 500px; background: white;"></div>
-        </section>
+            <div class="cats-cards" id="catsCard">
+            </div>
+        </div>
+        <div style="height: 500px; background: white;"></div>
+
+        </div>
+        </div>
+    </section>
+    <div id="catModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div id="modalBody">
+            </div>
+        </div>
+    </div>
+    <script src="catalogueScript.js"></script>
+    <script src="navbar.js"></script>
 </body>
 
 </html>
