@@ -17,6 +17,7 @@
 
 body {
     font-family: 'Nunito', sans-serif;
+    font-weight: bold;
     background: var(--cream);
     color: var(--text);
 }

@@ -1,27 +1,33 @@
-/**
- * SECTION: Page Navigation
- * Handles showing/hiding different sections of the site
- */
 function showPage(pageId, element) {
-    // 1. Alert for demo purposes (since Adopt and Shop pages aren't in your HTML yet)
-    if (pageId !== 'home') {
-        alert("Redirecting to the " + pageId.toUpperCase() + " page!");
+
+    // Redirect to different pages
+    if (pageId === 'home') {
+        window.location.href = "home.html";
     }
 
-    // 2. Update Active Link UI
+    else if (pageId === 'catalogue') {
+        window.location.href = "Catalogue.html";
+    }
+
+    else if (pageId === 'shop') {
+        window.location.href = "shop.html";
+    }
+
+    else if (pageId === 'learnmore') {
+        window.location.href = "learnmore.html";
+    }
+
+    // Update Active Link UI
     const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => link.classList.remove('active'));
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
 
     if (element) {
         element.classList.add('active');
     }
 }
-
-
-// Add listener for the Learn More button
-document.getElementById('learnBtn').addEventListener('click', () => {
-    window.location.href = "learnmore.html";
-});
 
 // Create map
 const map = L.map('map').setView([3.8168, 103.3317], 15);
