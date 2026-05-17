@@ -219,6 +219,17 @@
     box-shadow: 0 4px 10px rgba(255, 122, 47, 0.3);
 }
 
+.popup-text {
+    font-family:'Fredoka One'; color: #333;
+}
+
+.popup-meta {
+    display: flex;
+    gap: 20px; 
+    margin: 30px 0; 
+    color: #666;
+}
+
 .modal {
     display: none;
     /* Hidden by default */
@@ -243,24 +254,6 @@
     position: relative;
     animation: slideDown 0.3s ease;
     margin-top: -2px;
-}
-
-.adopt-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #ff7a2f;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: 'Nunito', sans-serif;
-    margin-top: 15px;
-
-}
-
-.adopt-btn:hover {
-    background-color: #e66a25;
 }
 
 @keyframes slideDown {

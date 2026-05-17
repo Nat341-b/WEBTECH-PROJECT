@@ -33,7 +33,7 @@ function showSuggestions() {
     const matches = globalCatData.filter(cat => 
         cat.name.toLowerCase().startsWith(query) || 
         cat.location.toLowerCase().startsWith(query)
-    ).slice(0, 5); // Limit to top 5 results (object 1 to 5)
+    ).slice(0, 2); // Limit to top 5 results (object 1 to 5)
 
     if (matches.length > 0) {
         box.innerHTML = matches.map(cat => `
@@ -41,8 +41,7 @@ function showSuggestions() {
                 <strong>${cat.name}</strong>
             </div>
         `).join('');
-        box.style.display = "block"; //takes the display as in it takes space (block)
-    } else {
+        box.style.display = "block"; //renders and takes space 
         box.style.display = "none"; //doesn't take/fill any space(none)
     }
 }
@@ -113,7 +112,7 @@ function PopupByName(name) {
             <p><strong>Age:</strong> ${cat.age}</p>
             <p>📍 ${cat.location}</p>
             <p> 📞 Owner Contact ${cat.owner} </p>
-            <button class="adopt-btn" onclick="AdoptPet('${cat.name}')">Adopt ${cat.name}</button>
+            <button class="view-details-button" onclick="AdoptPet('${cat.name}')">Adopt ${cat.name}</button>
         `;
         modal.style.display = "block";
     }
@@ -129,9 +128,9 @@ function Popup(index) {
     // We only inject the stuff that CHANGES for each cat
     modalBody.innerHTML = `
         <img  src="${cat.image}" style="width:100%; height:250px; object-fit:cover; border-radius:15px; margin-bottom:15px;">
-        <h2 style="font-family:'Fredoka One'; color: #333;">${cat.name}</h2>
+        <h2 class="popup-text">${cat.name}</h2>
         
-        <div style="display: flex; gap: 20px; margin: 30px 0; color: #666;">
+        <div class="popup-meta">
             <span><strong>Age:</strong> ${cat.age}</span>
             <span><strong>Gender:</strong> ${cat.gender}</span>
         </div>
