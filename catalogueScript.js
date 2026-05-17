@@ -37,13 +37,14 @@ function showSuggestions() {
 
     if (matches.length > 0) {
         box.innerHTML = matches.map(cat => `
-            <div class="suggest-item" onclick="selectSuggestion('${cat.name}')">
+         <div class="suggest-item" onclick="selectSuggestion('${cat.name}')">
                 <strong>${cat.name}</strong>
             </div>
         `).join('');
         box.style.display = "block"; //renders and takes space 
-        box.style.display = "none"; //doesn't take/fill any space(none)
     }
+    else
+        box.style.display = "none"; //doesn't take/fill any space(none)
 }
 
 function selectSuggestion(name) {
@@ -107,7 +108,7 @@ function PopupByName(name) {
 
     if (cat) {
         modalBody.innerHTML = `
-            <img src="${cat.image}" style="width:100%; height:250px; object-fit:cover; border-radius:15px; margin-bottom:15px;">
+            <img class="modal-image" src="${cat.image}">
             <h2>${cat.name}</h2>
             <p><strong>Age:</strong> ${cat.age}</p>
             <p>📍 ${cat.location}</p>
