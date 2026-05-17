@@ -142,39 +142,43 @@
 
     <div class="container">
         
-        <!-- Card 1 -->
-        <div class="card">
-            <div class="image-container">🥫</div>
-            
-            <h3>Royal Canin Adult Cat</h3>
-            <p class="price">RM 45.90</p>
-            <button class="buy-btn" data-keyword="cat food" >🛒 Buy Now</button>
+        <div class="container">
+    <div class="card">
+        <div class="image-container">
+            <img src="food.jpg" alt="Cat Food" style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
         </div>
+        <h3>Cat Food</h3>
+        <p class="price">RM 45.90</p>
+        <button class="buy-btn" data-keyword="cat food">🛒 Buy Now</button>
+    </div>
 
-        <div class="card">
-            <div class="image-container">🐟</div>
-            
-            <h3>Whiskas Kitten Pouches</h3>
-            <p class="price">RM 18.50</p>
-            <button class="buy-btn" data-keyword="cat toy">🛒 Buy Now</button>
+    <div class="card">
+        <div class="image-container">
+            <img src="toy.jpg" alt="Cat Toy" style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
         </div>
+        <h3>Cat Toy</h3>
+        <p class="price">RM 18.50</p>
+        <button class="buy-btn" data-keyword="cat toy">🛒 Buy Now</button>
+    </div>
 
-        <div class="card">
-            <div class="image-container">🐾</div>
-            
-            <h3>Me-O Dry Cat Food 1.1kg</h3>
-            <p class="price">RM 22.00</p>
-            <button class="buy-btn" data-keyword="cat suplement" >🛒 Buy Now</button>
+    <div class="card">
+        <div class="image-container">
+            <img src="supplement.jpg" alt="Cat Supplement" style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
         </div>
+        <h3>Cat Supplement</h3>
+        <p class="price">RM 22.00</p>
+        <button class="buy-btn" data-keyword="cat supplement">🛒 Buy Now</button>
+    </div>
 
-         <div class="card">
-            <div class="image-container">🐠</div>
-            
-            <h3>Fussie Cat Tuna Flakes</h3>
-            <p class="price">RM 35.00</p>
-            <button class="buy-btn" data-keyword="cat sand">🛒 Buy Now</button>
+    <div class="card">
+        <div class="image-container">
+            <img src="sand.jpg" alt="Cat Sand" style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
         </div>
-
+        <h3>Cat Sand</h3>
+        <p class="price">RM 35.00</p>
+        <button class="buy-btn" data-keyword="cat sand">🛒 Buy Now</button>
+    </div>
+</div>
       </div>
 <script>
    
@@ -201,7 +205,7 @@
                 console.log("Deep Link Generated:", searchLink);
                 window.open(searchLink, '_blank');
                 
-                // Reset button
+                
                 this.innerHTML = originalText;
             }, 600);
         });
