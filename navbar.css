@@ -83,10 +83,14 @@ nav {
     transition: all 0.25s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    background: var(--orange-pale);
-    color: var(--orange);
+.nav-links a:hover {
+    background:hsl(0, 56%, 81%);
+}
+
+.nav-links a:click,
+.nav-links a:active {
+    background:hsl(0, 56%, 81%);
+    color: hsl(0, 56%, 20%);
 }
 
 
