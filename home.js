@@ -1,7 +1,9 @@
 function showPage(pageId, element) {
 
-    const sound = new Audio("Meow.wav");
-    sound.play();
+    const sound = new Audio("image/Meow.wav");
+    sound.play().catch(function(error) {
+    console.log("Sound blocked:", error);
+    });
 
     // Redirect to different pages
     if (pageId === 'home') {
@@ -24,7 +26,7 @@ function showPage(pageId, element) {
     const navLinks = document.querySelectorAll('.nav-links a');
 
     navLinks.forEach(link => {
-        link.classList.remove('active');
+        link.classList.remove('active');//stay
     });
 
     if (element) {
