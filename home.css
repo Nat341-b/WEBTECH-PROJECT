@@ -465,6 +465,7 @@
     .map-title {
         color: #333;
         margin-bottom: 15px;
+        margin-left: -55px;
     }
 
     #map {
@@ -472,4 +473,5 @@
         width: 100%;
         border-radius: 10px;
         border: 2px solid #ccc;
+        margin-left: -40px;
     }
