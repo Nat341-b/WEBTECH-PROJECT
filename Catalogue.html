@@ -7,11 +7,12 @@
     <title>PetBuddy 🐱-Find Your Purr-fect friend!</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="oku.css" />
 </head>
 
 <body>
     <!-- navigation bar -->
-    <div id="navbar-container"></div>
+    <nav id="navbar-container"></nav>
 
     <section>
         <!--ADOPT PAGE-->
@@ -25,7 +26,7 @@
                         <span class="search-icon">🔎</span>
                         <input class="search-bar" id="searchInput" type="text"
                             placeholder="Search by name or location..." oninput="filterCats(); showSuggestions();"
-                            autocomplete="off"> <!--Turns off google's suggestions-->
+                            autocomplete="off">
                     </div>
                 </div>
             </div>
@@ -44,9 +45,9 @@
             </div>
         </div>
     </div>
-    <script src="catalogueScript.js"></script>
     <script src="navbar.js"></script>
-    
+    <script src="catalogueScript.js"></script>
+    <script src="oku.js"></script>
 </body>
 
 </html>

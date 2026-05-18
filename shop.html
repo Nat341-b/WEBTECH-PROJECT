@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="oku.css">
     <style>
-      * {
+        html {
+            font-size: 16px;
+        }
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-.container {
 
-  
-
-
-            
-             max-width: 1200px;
+        .container {
+            max-width: 1200px;
             margin: 50px auto;
             padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            
-}
 
-.container h1 {
+        }
+
+        .container h1 {
             font-size: 36px;
             display: flex;
             justify-content: center;
@@ -36,35 +39,37 @@
             margin-bottom: 10px;
         }
 
-.container p {
+        .container p {
             opacity: 0.9;
             font-size: 16px;
 
         }
 
- .card {
-            
+        .card {
 
-            background-color:#FFF5EE;
+
+            background-color: #FFF5EE;
             border-radius: 20px;
             padding: 25px;
             color: #333;
             transition: 0.3s;
             border: 1px solid #F0F0F0;
-        }       
-.card:hover {
+        }
+
+        .card:hover {
             transform: translateY(-5px);
         }
 
         .image-container {
-            background-color:  white;
+            background-color: white;
             height: 180px;
             border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            font-size: 60px; /* Placeholder for icons */
+            font-size: 60px;
+            /* Placeholder for icons */
         }
 
         .badge {
@@ -85,31 +90,22 @@
         }
 
         .hero {
-            background: linear-gradient( #FF7A2D 100%);
+            background: linear-gradient(#FF7A2D 100%);
             padding: 60px 20px;
             text-align: center;
             color: white;
         }
 
         .hero h1 {
-            font-size: 36px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
+            font-size: 2.25rem;
         }
 
         .hero p {
-            opacity: 0.9;
-            font-size: 16px;
+            font-size: 1rem;
         }
-       
+
         .price {
-            color: #333;;
-            font-weight: 700;
-            font-size: 15px;
-            margin-bottom: 20px;
+            font-size: 0.95rem;
         }
 
         .buy-btn {
@@ -127,85 +123,79 @@
             gap: 10px;
             box-shadow: 0 4px 15px rgba(255, 122, 45, 0.3);
         }
-    
-
-
-
-
-</style>
+    </style>
 </head>
+
 <body>
-<header class="hero">
-  <h1>🛒 Pet Food Shop</h1>
+    <div id="navbar-container"></div>
+    <header class="hero">
+        <h1>🛒 Pet Food Shop</h1>
         <p>Quality food & accessories for your furry friends</p>
-</header>
+    </header>
 
     <div class="container">
-        
-        <!-- Card 1 -->
         <div class="card">
-            <div class="image-container">🥫</div>
-            
-            <h3>Royal Canin Adult Cat</h3>
-            <p class="price">RM 45.90</p>
-            <button class="buy-btn" data-keyword="cat food" >🛒 Buy Now</button>
+            <div class="image-container">
+                <img src="image/food.jpg" alt="Cat Food"
+                    style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
+            </div>
+            <h3>Cat Food</h3>
+            <p class="price">RM 15.00 – RM 180.00</p>
+            <button class="buy-btn" data-keyword="cat food">🛒 Buy Now</button>
         </div>
 
         <div class="card">
-            <div class="image-container">🐟</div>
-            
-            <h3>Whiskas Kitten Pouches</h3>
-            <p class="price">RM 18.50</p>
+            <div class="image-container">
+                <img src="image/toy.jpg" alt="Cat Toy"
+                    style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
+            </div>
+            <h3>Cat Toy</h3>
+            <p class="price">RM 3.00 – RM 45.00</p>
             <button class="buy-btn" data-keyword="cat toy">🛒 Buy Now</button>
         </div>
 
         <div class="card">
-            <div class="image-container">🐾</div>
-            
-            <h3>Me-O Dry Cat Food 1.1kg</h3>
-            <p class="price">RM 22.00</p>
-            <button class="buy-btn" data-keyword="cat suplement" >🛒 Buy Now</button>
+            <div class="image-container">
+                <img src="image/supplement.jpg" alt="Cat Supplement"
+                    style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
+            </div>
+            <h3>Cat Supplement</h3>
+            <p class="price">RM 20.00 – RM 85.00</p>
+            <button class="buy-btn" data-keyword="cat supplement">🛒 Buy Now</button>
         </div>
 
-         <div class="card">
-            <div class="image-container">🐠</div>
-            
-            <h3>Fussie Cat Tuna Flakes</h3>
-            <p class="price">RM 35.00</p>
+        <div class="card">
+            <div class="image-container">
+                <img src="image/sand.jpg" alt="Cat Sand"
+                    style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
+            </div>
+            <h3>Cat Sand</h3>
+            <p class="price">RM 12.00 – RM 55.00</p>
             <button class="buy-btn" data-keyword="cat sand">🛒 Buy Now</button>
         </div>
+    </div>
 
-      </div>
-<script>
-   
-    const MY_AFFILIATE_ID = "CLASS_PROJECT_2026";
+    <script src="navbar.js"></script>
+    <script>
+        const MY_AFFILIATE_ID = "CLASS_PROJECT_2026";
 
-    document.querySelectorAll('.buy-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const keyword = this.getAttribute('data-keyword');
-            
-            if (!keyword) return;
+        document.querySelectorAll('.buy-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const keyword = this.getAttribute('data-keyword');
+                if (!keyword) return;
 
-            
-            console.log(`Status: Generating Affiliate Search Link for: "${keyword}"`);
+                const encodedKeyword = encodeURIComponent(keyword);
+                const searchLink = `https://shopee.com.my/search?keyword=${encodedKeyword}&sp_atk=${MY_AFFILIATE_ID}`;
 
-            
-            const encodedKeyword = encodeURIComponent(keyword);
-            const searchLink = `https://shopee.com.my/search?keyword=${encodedKeyword}&sp_atk=${MY_AFFILIATE_ID}`;
+                const originalText = this.innerHTML;
+                this.innerText = "Opening Shopee...";
 
-            
-            const originalText = this.innerHTML;
-            this.innerText = "Opening Shopee...";
-            
-            setTimeout(() => {
-                console.log("Deep Link Generated:", searchLink);
-                window.open(searchLink, '_blank');
-                
-                // Reset button
-                this.innerHTML = originalText;
-            }, 600);
+                setTimeout(() => {
+                    window.open(searchLink, '_blank');
+                    this.innerHTML = originalText;
+                }, 600);
+            });
         });
-    });
-</script>
+    </script>
+    <script src="oku.js"></script>
 </body>
-</html>
