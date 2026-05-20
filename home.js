@@ -1,9 +1,6 @@
 function showPage(pageId, element) {
 
-    const sound = new Audio("image/Meow.wav");
-    sound.play().catch(function(error) {
-    console.log("Sound blocked:", error);
-    });
+    
 
     // Redirect to different pages
     if (pageId === 'home') {
