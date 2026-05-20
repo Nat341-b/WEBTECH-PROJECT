@@ -23,8 +23,18 @@ displayCats();
 function showSuggestions() {
     const query = document.getElementById('searchInput').value.toLowerCase();
     const box = document.getElementById('suggestionsBox');
-    
-    if (query.length < 1) {
+    const illegalChars = /[^a-zA-Z0-9\s,.]/;
+
+    if (illegalChars.test(query)){ //Handles input validation
+            box.innerHTML = `<section class="suggest-item">
+                ⚠️Invalid characters entered
+                </section>`
+            box.style.display = 'block';
+            return;
+        }
+
+    try {
+        if (query.length < 1) {
         box.style.display = "none";
         return;
     }
@@ -33,7 +43,7 @@ function showSuggestions() {
     const matches = globalCatData.filter(cat => 
         cat.name.toLowerCase().startsWith(query) || 
         cat.location.toLowerCase().startsWith(query)
-    ).slice(0, 2); // Limit to top 5 results (object 1 to 5)
+    ).slice(0, 5); // Limit to top 5 results (object 1 to 5)
 
     if (matches.length > 0) {
         box.innerHTML = matches.map(cat => `
@@ -45,6 +55,13 @@ function showSuggestions() {
     }
     else
         box.style.display = "none"; //doesn't take/fill any space(none)
+
+    } catch(error){
+        
+        console.error("System error processing search input", error);s
+        
+    }
+    
 }
 
 function selectSuggestion(name) {
