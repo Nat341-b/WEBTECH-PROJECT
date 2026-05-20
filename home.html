@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>😺 PetBuddy</title>
+     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600&display=swap"/>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="oku.css">
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
@@ -39,41 +39,54 @@
     <!-- home page content -->
 
     <div class="content-section">
-        <div class="row-container">
 
-            <div class="cards-wrapper">
-                <h2 class="content-title">What would you like to do? 🐾</h2>
-                <div class="content-container">
-                    <div class="content-box">
-                        <div class="content-icon">🐱</div>
-                        <h3>Adopt a Cat</h3>
-                        <p>Browse our catalogue of adorable cats looking for a loving forever home.</p>
-                        <button class="content-btn content-filled" onclick="showPage('catalogue',null)">Browse Cats
-                            🐾</button>
-                    </div>
+    <!-- LEFT SIDE -->
+    <div class="content-left">
+        <h2 class="content-title">What would you like to do? 🐾</h2>
 
-                    <div class="content-box">
-                        <div class="content-icon">🛒</div>
-                        <h3>Shop for Pet Food</h3>
-                        <p>Get the best quality pet food and accessories for your furry friend.</p>
-                        <button class="content-btn content-outline" onclick="showPage('shop',null)">Visit Shop
-                            🛍️</button>
-                    </div>
-                </div>
+        <div class="content-container">
+
+            <div class="content-box">
+                <div class="content-icon">🐱</div>
+                <h3>Adopt a Cat</h3>
+                <p>Browse our catalogue of adorable cats looking for a loving forever home.</p>
+
+                <button class="content-btn content-filled"
+                    onclick="showPage('catalogue',null)">
+                    Browse Cats 🐾
+                </button>
             </div>
 
-            <div class="container-map">
+            <div class="content-box">
+                <div class="content-icon">🛒</div>
+                <h3>Shop for Pet Food</h3>
+                <p>Get the best quality pet food and accessories for your furry friend.</p>
 
-                <h2 class="map-title">
-                    Our Pet Store Location 📍
-                </h2>
-
-                <div id="map"></div>
+                <button class="content-btn content-outline"
+                    onclick="showPage('shop',null)">
+                    Visit Shop 🛍️
+                </button>
             </div>
-
 
         </div>
     </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="container-map">
+
+        <h2 class="map-title">
+            Our Pet Store Location 📍
+        </h2>
+
+        <div id="map"></div>
+
+        <div class="store-address">
+            📍 A-15, Kuantan City Mall, Kuantan, Pahang
+        </div>
+
+    </div>
+
+</div>
 
     <!-- learn more section -->
 

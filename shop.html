@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Pet Food Shop</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600&display=swap"/>
+    <!-- Prerequisite Stylesheets -->
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="oku.css">
     <style>
@@ -125,49 +126,53 @@
         }
     </style>
 </head>
-
 <body>
+
+    <!-- Shared Navbar Target Container -->
     <div id="navbar-container"></div>
+
+    <!-- Shop Hero Section -->
     <header class="hero">
         <h1>🛒 Pet Food Shop</h1>
         <p>Quality food & accessories for your furry friends</p>
     </header>
 
+    <!-- Main Grid Container -->
     <div class="container">
+        <!-- Card 1: Cat Food -->
         <div class="card">
             <div class="image-container">
-                <img src="image/food.jpg" alt="Cat Food"
-                    style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
+                <img src="image/food.jpg" alt="Cat Food">
             </div>
             <h3>Cat Food</h3>
             <p class="price">RM 15.00 – RM 180.00</p>
             <button class="buy-btn" data-keyword="cat food">🛒 Buy Now</button>
         </div>
 
+        <!-- Card 2: Cat Toy -->
         <div class="card">
             <div class="image-container">
-                <img src="image/toy.jpg" alt="Cat Toy"
-                    style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
+                <img src="image/toy.jpg" alt="Cat Toy">
             </div>
             <h3>Cat Toy</h3>
             <p class="price">RM 3.00 – RM 45.00</p>
             <button class="buy-btn" data-keyword="cat toy">🛒 Buy Now</button>
         </div>
 
+        <!-- Card 3: Cat Supplement -->
         <div class="card">
             <div class="image-container">
-                <img src="image/supplement.jpg" alt="Cat Supplement"
-                    style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
+                <img src="image/supplement.jpg" alt="Cat Supplement">
             </div>
             <h3>Cat Supplement</h3>
             <p class="price">RM 20.00 – RM 85.00</p>
             <button class="buy-btn" data-keyword="cat supplement">🛒 Buy Now</button>
         </div>
 
+        <!-- Card 4: Cat Sand -->
         <div class="card">
             <div class="image-container">
-                <img src="image/sand.jpg" alt="Cat Sand"
-                    style="max-height: 100%; max-width: 100%; border-radius: 15px; object-fit: contain;">
+                <img src="image/sand.jpg" alt="Cat Sand">
             </div>
             <h3>Cat Sand</h3>
             <p class="price">RM 12.00 – RM 55.00</p>
@@ -175,27 +180,9 @@
         </div>
     </div>
 
+    <!-- Script Execution Stack -->
     <script src="navbar.js"></script>
-    <script>
-        const MY_AFFILIATE_ID = "CLASS_PROJECT_2026";
-
-        document.querySelectorAll('.buy-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const keyword = this.getAttribute('data-keyword');
-                if (!keyword) return;
-
-                const encodedKeyword = encodeURIComponent(keyword);
-                const searchLink = `https://shopee.com.my/search?keyword=${encodedKeyword}&sp_atk=${MY_AFFILIATE_ID}`;
-
-                const originalText = this.innerHTML;
-                this.innerText = "Opening Shopee...";
-
-                setTimeout(() => {
-                    window.open(searchLink, '_blank');
-                    this.innerHTML = originalText;
-                }, 600);
-            });
-        });
-    </script>
+    <script src="shop.js"></script>
     <script src="oku.js"></script>
 </body>
+</html>
