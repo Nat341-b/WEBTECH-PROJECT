@@ -1,0 +1,121 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #FFFAF6; /* Same as --cream in home.css */
+    color: #2D2014;
+    overflow-x: hidden;
+}
+
+/* Hero Section Styles (Matching Catalogue Header) */
+.about-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff7a2f; /* Brand Orange */
+    width: 100%;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.header-text {
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.about-hero p {
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Container & Grid Layout */
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Team Card Styles (Matching Catalogue & Shop Cards) */
+.team-card {
+    background: white;
+    border-radius: 25px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #F0F0F0;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 48px rgba(255, 122, 47, 0.15);
+}
+
+.member-image {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px;
+    border-radius: 50%; /* Circular images for team members */
+    overflow: hidden;
+    border: 4px solid #FFF3EC;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    font-family: 'Fredoka One', cursive;
+    color: #3b2b22;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.role {
+    font-size: 0.95rem;
+    color: #ff7a2f;
+    font-weight: 600;
+}
+
+/* Footer style from home.css */
+.about-footer {
+    padding: 40px;
+    text-align: center;
+    background: #3b2b22;
+    color: white;
+    margin-top: 60px;
+}
+
+.copyright {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-text {
+        font-size: 36px;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
