@@ -86,36 +86,46 @@
         background: white;
     }
 
-    /* home-content */
+  .content-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
 
-    .content-section {
-        padding: 60px 40px;
-        max-width: 1500px;
-        margin: 0 auto;
-        background: #f5ebe3;
-        text-align: center;
-    }
+    padding: 60px 40px;
+    background: #f5ebe3;
+    flex-wrap: wrap;
+}
 
-    .content-title {
-        font-size: 36px;
-        margin-bottom: 40px;
-        color: #3b2b22;
-    }
+/* LEFT */
+.content-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .content-container {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-    }
+.content-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #3b2b22;
+}
 
-    .content-box {
-        background: #fff;
-        width: 300px;
-        padding: 30px 20px;
-        border-radius: 25px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    }
+.content-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* BOX */
+.content-box {
+    background: #fff;
+    width: 300px;
+    padding: 30px 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    text-align: center;
+}
 
     .content-box:hover {
         box-shadow: 0 80px 1000px rgba(0, 0, 0, 0.05);
@@ -241,17 +251,6 @@
         color: var(--text);
     }
 
-    /* --- New Row Layout Container --- */
-    .row-container {
-        display: flex;
-        flex-direction: row;
-        /* This puts game left, cards right */
-        justify-content: center;
-        align-items: flex-start;
-        gap: 50px;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
 
     /* --- Game Wrapper (Left) --- */
     .game-wrapper {
@@ -454,24 +453,29 @@
         }
     }
 
-    /* Leaflet Map Styles */
-    .map-container {
-        width: 90%;
-        margin: auto;
-        text-align: center;
-        padding-top: 20px;
-    }
+   
+/* RIGHT MAP */
+.container-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .map-title {
-        color: #333;
-        margin-bottom: 15px;
-        margin-left: -55px;
-    }
+.map-title {
+    margin-bottom: 15px;
+    color: #333;
+}
 
-    #map {
-        height: 400px;
-        width: 100%;
-        border-radius: 10px;
-        border: 2px solid #ccc;
-        margin-left: -40px;
-    }
+#map {
+    width: 400px;
+    height: 350px;
+    border-radius: 12px;
+    border: 2px solid #ccc;
+}
+
+.store-address {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+}
