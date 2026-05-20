@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="catalogueStyle.css">
-    <title>PetBuddy 🐱-Find Your Purr-fect friend!</title>
+<html lang="en"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="catalogueStyle.css">
+    <title>PetBuddy 🐱 - Find Your Purr-fect friend!</title>
     <link rel="stylesheet" href="oku.css" />
 </head>
 
 <body>
-    <!-- navigation bar -->
     <nav id="navbar-container"></nav>
 
-    <section>
-        <!--ADOPT PAGE-->
-        <div id="adopt">
-            <div class="catalogue-header">
-                <h1 class="header-text">🐱Cats for Adoption </h1>
-                <p>Find your purr-fect buddy here~</p>
-                <div class="search-container-box">
-                    <div class="search-wrapper">
-                        <div id="suggestionsBox" class="suggest-drop"></div>
-                        <span class="search-icon">🔎</span>
-                        <input class="search-bar" id="searchInput" type="text"
-                            placeholder="Search by name or location..." oninput="filterCats(); showSuggestions();"
-                            autocomplete="off">
-                    </div>
+    <main id="adopt">
+        
+        <header class="catalogue-header">
+            <h1 class="header-text">🐱 Cats for Adoption </h1>
+            <p>Find your purr-fect buddy here~</p>
+            
+            <div class="search-container-box" role="search"> 
+                <div class="search-wrapper">
+                    <div id="suggestionsBox" class="suggest-drop" role="listbox" aria-label="Search suggestions"></div>
+                    <span class="search-icon" aria-hidden="true">🔎</span> <input class="search-bar" id="searchInput" type="search" placeholder="Search by name or location..." oninput="filterCats(); showSuggestions();"
+                        autocomplete="off" aria-label="Search for cats by name or location">
                 </div>
             </div>
-            <div class="cats-cards" id="catsCard">
-            </div>
-        </div>
-        <div style="height: 500px; background: white;"></div>
+        </header>
 
-        </div>
-        </div>
-    </section>
-    <div id="catModal" class="modal">
+        <section class="cats-cards" id="catsCard" aria-label="Available cats container">
+            </section>
+
+        <div style="height: 500px; background: white;" aria-hidden="true"></div>
+
+    </main>
+
+    <div id="catModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <div id="modalBody">
-            </div>
+            <button class="close-btn" onclick="closePopup()" aria-label="Close details popup" type="button">&times;</button>
+            <article id="modalBody">
+                </article>
         </div>
     </div>
+
     <script src="navbar.js"></script>
     <script src="catalogueScript.js"></script>
     <script src="oku.js"></script>
