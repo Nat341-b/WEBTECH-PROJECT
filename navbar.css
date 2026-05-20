@@ -9,10 +9,19 @@
     --text-muted: #8A6E58;
 }
 
+/*Making every font the same for the navigation bar*/
+/* Target the container housing your navbar string elements */
+
+.logo-text { 
+    font-family: 'Fredoka One', cursive !important;
+    font-weight: normal, !important;/* Fredoka One is naturally ultra-bold, forcing bold can distort it */
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
 
 body {
@@ -51,7 +60,6 @@ nav {
     font-size: 1.8rem;
     color: var(--orange);
     letter-spacing: 1px;
-    font-weight: bold;
 }
 
 .logo span {

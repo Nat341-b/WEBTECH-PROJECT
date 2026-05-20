@@ -1,6 +1,6 @@
 // CREATE ACCESSIBILITY BUTTON
 const accessibilityBtn = document.createElement("div");
-accessibilityBtn.innerHTML = "♿";
+accessibilityBtn.innerHTML = "🧍‍♂️";
 accessibilityBtn.classList.add("accessibility-btn");
 
 // CREATE MENU

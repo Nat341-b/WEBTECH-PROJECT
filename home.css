@@ -86,14 +86,22 @@
         background: white;
     }
 
-    /* home-content */
-
     .content-section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 60px;
+
         padding: 60px 40px;
-        max-width: 1500px;
-        margin: 0 auto;
         background: #f5ebe3;
-        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    /* LEFT */
+    .content-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .content-title {
@@ -104,17 +112,19 @@
 
     .content-container {
         display: flex;
-        justify-content: center;
         gap: 30px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
+    /* BOX */
     .content-box {
         background: #fff;
         width: 300px;
         padding: 30px 20px;
         border-radius: 25px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
     }
 
     .content-box:hover {
@@ -171,119 +181,6 @@
     .content-outline:hover {
         background: #ff7a2f;
         color: rgb(255, 255, 255);
-    }
-
-    /* game section */
-
-    .game-section {
-        padding: 40px 40px;
-        max-width: 1500px;
-        margin: 0 auto;
-        background: var(--white);
-        text-align: right;
-    }
-
-    .game-section h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: var(--text);
-    }
-
-    #game-container {
-        width: 300px;
-        height: 300px;
-        border: 2px solid var(--orange);
-        border-radius: var(--radius);
-        margin: 0 auto;
-        position: relative;
-        background: var(--cream);
-        overflow: hidden;
-    }
-
-    #cat,
-    #mouse {
-        position: absolute;
-        font-size: 40px;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-
-    #cat {
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    #mouse {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    #start-game {
-        margin-top: 20px;
-        background: var(--orange);
-        color: var(--white);
-        border: none;
-        padding: 10px 20px;
-        border-radius: var(--radius-sm);
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    #start-game:hover {
-        background: var(--orange-dark);
-    }
-
-    #score {
-        margin-top: 10px;
-        font-size: 18px;
-        color: var(--text);
-    }
-
-    /* --- New Row Layout Container --- */
-    .row-container {
-        display: flex;
-        flex-direction: row;
-        /* This puts game left, cards right */
-        justify-content: center;
-        align-items: flex-start;
-        gap: 50px;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    /* --- Game Wrapper (Left) --- */
-    .game-wrapper {
-        flex: 1;
-        /* Proportional width */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Redefining your game container for the new layout */
-    #game-container {
-        width: 100%;
-        max-width: 400px;
-        height: 450px;
-        /* Taller to look better in row */
-        border: 3px solid var(--orange);
-        border-radius: var(--radius);
-        background: var(--white);
-        position: relative;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: var(--shadow);
-    }
-
-    .game-play-area {
-        position: relative;
-        width: 100%;
-        flex-grow: 1;
-        /* Takes up the rest of the box space */
     }
 
     /* --- Cards Wrapper (Right) --- */
@@ -454,24 +351,29 @@
         }
     }
 
-    /* Leaflet Map Styles */
-    .map-container {
-        width: 90%;
-        margin: auto;
-        text-align: center;
-        padding-top: 20px;
+
+    /* RIGHT MAP */
+    .container-map {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .map-title {
-        color: #333;
         margin-bottom: 15px;
-        margin-left: -55px;
+        color: #333;
     }
 
     #map {
-        height: 400px;
-        width: 100%;
-        border-radius: 10px;
+        width: 400px;
+        height: 350px;
+        border-radius: 12px;
         border: 2px solid #ccc;
-        margin-left: -40px;
+    }
+
+    .store-address {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #555;
+        text-align: center;
     }
