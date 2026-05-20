@@ -3,7 +3,7 @@ function loadNavbar() {
 
     const navbar = `
         <nav>
-            <div class="logo">🐱 Pet<span>Buddy</span></div>
+            <div class="logo">🐱 Pet<span class="logo-text">Buddy</span></div>
             <ul class="nav-links">
                 <li><a href="home.html" class="${currentPage === 'home.html' ? 'active' : ''}">🏠 Home</a></li>
                 <li><a href="Catalogue.html" class="${currentPage === 'Catalogue.html' ? 'active' : ''}">🐾 Adopt Now</a></li>
