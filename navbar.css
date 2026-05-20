@@ -12,16 +12,16 @@
 /*Making every font the same for the navigation bar*/
 /* Target the container housing your navbar string elements */
 
-.logo-text { 
+.logo-text {
     font-family: 'Fredoka One', cursive !important;
-    font-weight: normal, !important;/* Fredoka One is naturally ultra-bold, forcing bold can distort it */
+    font-weight: normal, !important;
+    /* Fredoka One is naturally ultra-bold, forcing bold can distort it */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
 }
 
 body {
@@ -70,6 +70,7 @@ nav {
     display: flex;
     gap: 10px;
     list-style: none;
+
 }
 
 .nav-links li {
@@ -78,10 +79,9 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-
     font-family: 'Nunito', sans-serif;
     font-size: 0.95rem;
-    font-weight: 700;
+    font-weight: 500 !important;
 
     color: var(--text-muted);
 
@@ -91,13 +91,9 @@ nav {
     transition: all 0.25s ease;
 }
 
-.nav-links a:hover {
-    background:hsl(0, 56%, 81%);
-}
-
-.nav-links a:click,
-.nav-links a:active {
-    background:hsl(0, 56%, 81%);
+.nav-links a:hover,
+.nav-links a.active {
+    background: hsl(0, 56%, 81%);
     color: hsl(0, 56%, 20%);
 }
 
